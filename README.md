@@ -52,7 +52,7 @@ computation time
 
 ### Output files
 
-##### parameters_<filename>
+##### parameters_filename
 Column 1: log(alpha)  
 Column 2: evidence  
 Column 3: chi^2_r  
@@ -66,10 +66,10 @@ Column 10 and subsequent: refined parameter values
 
 The last line is the most probable fit  
 
-##### start_<filename>  
+##### start_filename 
 Intensity calculated with the prior values, which are also the initial values in the fitting algorithm  
 
-##### fit_<filename>  
+##### fit_filename 
 Most probable fit after model refinement for all alpha-values. The last is the most probable fit.
 
 ##### global_par.d
@@ -88,9 +88,7 @@ Three models have been implemented so far
 #### Nanodisc
 Name of model (for input file): nanodisc  
 Name of function (in BayesFit.f): fct_nano  
-Description: Elliptical nanodiscs with a purification tag.  
-             The disc is build up of cylinder form factors,  
-             and the tag is modelled as a random coil.  
+Description: Elliptical nanodiscs with a purification tag. The disc is build up of cylinder form factors and the tag is modelled as a random coil.  
 
 #### Micelle
 Name of model (for input file): micelle  
