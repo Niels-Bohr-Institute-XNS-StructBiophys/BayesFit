@@ -1,10 +1,10 @@
 # BayesFit
 Fitting program for refining analytical models with small-angle scattering data using Bayesian refinement.  
 
-### Cite
-For description of the theory as perspectives of the program, see: 
+## Citing the program  
+If you use the BayesFit software in your work, please cite:                       
 
-Andreas Haahr Larsen, Lise Arleth, Steen Hansen, 2018, Analysis of small-angle scattering data using model fitting and Bayesian regularization, J. Appl. Cryst. 51, 1151-1161.
+Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.  
 
 ## Install and run the program
 
@@ -112,12 +112,6 @@ Description: Simple sphere with background.
 BayesFit is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.          
 
 BayesFit is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details (http://www.gnu.org/licenses/).  
-
-## Citing the program  
-If you use the BayesFit software in your work, please cite:                       
-
-Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). J Appl Cryst, 51, 1151-1161.  
-
 
 ## Acknowledgements
 To CoNeXT and University of Copenhagen for co-funding the project.   
