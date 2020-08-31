@@ -13,7 +13,7 @@ Download bayesfit.f
 
 ### Compiling the program
 
->> gfortran -m32 -O2 bayefit.f -o bayesfit
+>> gfortran -m32 -O2 bayesfit.f -o bayesfit
 
 ### Running the program
 
