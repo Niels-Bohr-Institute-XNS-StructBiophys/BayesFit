@@ -24,7 +24,7 @@ Line 1: filename with data (headerlines are ignored)
 Line 2: model name (describes the function for fitting data)  
 Line 3: log(alpha_min), log(alpha_max), number of alpha values, max number of steps in function integrals, max iterations*   
 Line 4: q_min, q_max (to be included in the fit)  
-Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 1 or 0 (fit or fix)  
+Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 or 1 or 2 (0:fix 1:fit 2:fit with positive constraint)  
 
 *log(alpha_min) and log(alpha_max) and number of alpha values, are not used, as the optimal value of alpha is found automatically  
 
