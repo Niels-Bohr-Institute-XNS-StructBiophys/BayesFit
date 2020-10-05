@@ -8,6 +8,9 @@ Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-an
 
 ## Install and run the program
 
+### Operating systems
+Only tested on Linux Ubuntu        
+
 ### Installation
 Download bayesfit.f
 
