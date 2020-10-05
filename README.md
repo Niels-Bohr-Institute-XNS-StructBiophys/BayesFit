@@ -82,18 +82,24 @@ Name of model (for input file): nanodisc
 Name of function (in BayesFit.f): fct_nano  
 Description: Elliptical nanodiscs with a purification tag. The disc is build up of cylinder form factors and the tag is modelled as a random coil.  
 Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161. 
+Test data: Dataset5.rad    
+Test input file: input_nano.d    
 
 #### Micelle
 Name of model (for input file): micelle   
 Name of function (in BayesFit.f): fct_mic   
-Description: Core-shell detergent micelle.    
+Description: Core-shell detergent micelle, DDM micelles, concentration 30 mM.    
 Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161. 
+Test data: RB_DDM30mM.dat    
+Test input file: input_micelle.d    
 
 #### CoreShell
 Name of model (for input file): coreshell    
 Name of cunction (in BayesFit.f): fct_coreshell    
 Description: Idealised spherical core-shell particle.      
 Reference:   
+Test data: Isim.dat       
+Test input file: input_coreshell_good_prior.d, input_coreshell_poor_prior.d    
 
 #### Test model of spheres
 Name of model (for input file): test  
