@@ -105,7 +105,6 @@ Test input file: input_coreshell_good_prior.d, input_coreshell_poor_prior.d
 Name of model (for input file): test  
 Name of function (in BayesFit.f): fct_test  
 Description: Simple sphere with background.     
-Reference:     
 
 ## Versions  
 
