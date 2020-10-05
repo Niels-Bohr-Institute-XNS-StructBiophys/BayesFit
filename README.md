@@ -64,7 +64,10 @@ Intensity calculated with the prior values, which are also the initial values in
 Most probable fit after model refinement for all alpha-values.    
 
 ## Models 
-Four models have been implemented so far:    
+Four models have been implemented so far in BayesFit.   
+The models can be run with the python3 script run_examples.py. Edit the line "i = 0" to select what example model to run, and run the script: 
+
+>> python run_examples.py    
 
 #### Nanodisc
 Name of model (for input file): nanodisc  
