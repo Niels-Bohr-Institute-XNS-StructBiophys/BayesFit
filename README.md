@@ -34,7 +34,7 @@ Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 
 
 ### Terminal Output
 while running the following is printet:  
-Column 1: chi^2_r  
+Column 1: chi^2/M, where M is the number of datapoints
 Column 2: lambda (used in the Levenberg-Marquardt algorithm)  
 Column 3: log(alpha)  
 Column 4: Q  
@@ -54,28 +54,17 @@ computation time
 ### Output files
 
 ##### parameters.d
-Column 1: log(alpha)  
-Column 2: evidence  
-Column 3: chi^2_r  
-Column 4: N_g (number of good parameters)  
-Column 5: alpha*S (S is the prior)  
-Column 6: sum (the Occam term)  
-Column 7: chi^2 (chi^2 = chi^2_r * mtot)  
-Column 8: Iterations (before convergence)  
-Column 9: mtot (number of datapoints)  
-Column 10 and subsequent: refined parameter values  
 
-The second line is the same, but with uncertainties in column 10 and subsequent lines
+prior and refined parameter values, as well as Chi-square, reduced Chi-square, final alpha, number of good parameters (Ng), number of fitted datapoints (M), evidence, constraint (S), and alpha*S.     
 
 ##### prior.d 
 Intensity calculated with the prior values, which are also the initial values in the fitting algorithm  
 
 ##### fit.d
-Most probable fit after model refinement for all alpha-values. The last is the most probable fit
+Most probable fit after model refinement for all alpha-values.    
 
 ## Models 
-
-Four models have been implemented so far
+Four models have been implemented so far:    
 
 #### Nanodisc
 Name of model (for input file): nanodisc  
