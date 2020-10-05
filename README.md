@@ -123,7 +123,7 @@ BayesFit is free software: you can redistribute it and/or modify it under the te
 BayesFit is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details (http://www.gnu.org/licenses/).  
 
 ## Acknowledgements
-To CoNeXT, Carlsberg Foundation, and University of Copenhagen for co-funding the project.   
+CoNeXT, the Carlsberg Foundation, and University of Copenhagen for co-funding the project.   
 
 ## Suggestions for future development  
 - include resolution effects.  
