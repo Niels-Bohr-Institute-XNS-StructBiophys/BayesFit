@@ -13,20 +13,18 @@ Download bayesfit.f
 
 ### Compiling the program
 
->> gfortran -m32 -O2 bayesfit.f -o bayesfit
+>> gfortran -m64 -O2 bayesfit.f -o bayesfit
 
 ### Running the program
 
 >> bayesfit input_file.d    
 
-### The input file  
+### The input file contains
 Line 1: filename with data (headerlines are ignored)  
 Line 2: model name (describes the function for fitting data)  
-Line 3: log(alpha_min), log(alpha_max), number of alpha values, max number of steps in function integrals, max iterations*   
-Line 4: q_min, q_max (to be included in the fit)  
+Line 3: number of steps in function integrals, max iterations in minimization routine
+Line 4: q_min, q_max (to be included in the fit. to include everything, type, e.g., 0 and 1)  
 Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 or 1 or 2 (0:fix 1:fit 2:fit with positive constraint)  
-
-*log(alpha_min) and log(alpha_max) and number of alpha values, are not used, as the optimal value of alpha is found automatically  
 
 ### Dependencies  
 - fortran  
@@ -55,7 +53,7 @@ computation time
 
 ### Output files
 
-##### parameters_filename
+##### parameters.d
 Column 1: log(alpha)  
 Column 2: evidence  
 Column 3: chi^2_r  
@@ -67,46 +65,51 @@ Column 8: Iterations (before convergence)
 Column 9: mtot (number of datapoints)  
 Column 10 and subsequent: refined parameter values  
 
-The last line is the most probable fit  
+The second line is the same, but with uncertainties in column 10 and subsequent lines
 
-##### start_filename 
+##### prior.d 
 Intensity calculated with the prior values, which are also the initial values in the fitting algorithm  
 
-##### fit_filename 
-Most probable fit after model refinement for all alpha-values. The last is the most probable fit.
-
-##### global_par.d
-Gives some parameters from the model, depending on the chosen model
-
-##### errors.d
-As parameters_<filename> but with errors on parameters instead of refined values  
-
-#### Qcheck.d
-Used for debugging
+##### fit.d
+Most probable fit after model refinement for all alpha-values. The last is the most probable fit
 
 ## Models 
 
-Three models have been implemented so far
+Four models have been implemented so far
 
 #### Nanodisc
 Name of model (for input file): nanodisc  
 Name of function (in BayesFit.f): fct_nano  
 Description: Elliptical nanodiscs with a purification tag. The disc is build up of cylinder form factors and the tag is modelled as a random coil.  
+Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161. 
 
 #### Micelle
-Name of model (for input file): micelle  
-Name of function (in BayesFit.f): fct_mic  
-Description: Core-shell detergent micelle.  
+Name of model (for input file): micelle   
+Name of function (in BayesFit.f): fct_mic   
+Description: Core-shell detergent micelle.    
+Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161. 
+
+#### CoreShell
+Name of model (for input file): coreshell    
+Name of cunction (in BayesFit.f): fct_coreshell    
+Description: Idealised spherical core-shell particle.      
+Reference:   
 
 #### Test model of spheres
 Name of model (for input file): test  
 Name of function (in BayesFit.f): fct_test  
-Description: Simple sphere with background.  
+Description: Simple sphere with background. 
+Reference:     
 
 ## Versions  
 
 #### version 1
-- Release August 2018  
+- First release, August 2018  
+
+#### version 2
+- Release September 2020    
+- Cleaned up output    
+- Added model CoreShell    
 
 ## License
 BayesFit is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.          
@@ -114,10 +117,9 @@ BayesFit is free software: you can redistribute it and/or modify it under the te
 BayesFit is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details (http://www.gnu.org/licenses/).  
 
 ## Acknowledgements
-To CoNeXT and University of Copenhagen for co-funding the project.   
+To CoNeXT, Carlsberg Foundation, and University of Copenhagen for co-funding the project.   
 
-## Expected future development  
-- include SANS contrasts.  
+## Suggestions for future development  
 - include resolution effects.  
 - option for inclusion of several datasets.  
 - restructure, so models are independent modules.  
