@@ -47,7 +47,6 @@ coreshell
 ## Output
 
 ### Terminal Output
-while running the following is printet:  
 Column 1: chi^2/M, where M is the number of datapoints
 Column 2: lambda (used in the Levenberg-Marquardt algorithm)  
 Column 3: log(alpha)  
