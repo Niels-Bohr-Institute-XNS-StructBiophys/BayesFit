@@ -1,7 +1,7 @@
 # BayesFit
 Program for fitting analytical models to small-angle scattering data using Bayesian refinement.  
 
-*obs: the code is not well documented, so if you wish to use BayesApp, but your model is not implemented, do not hesitate to contact Andreas Larsen for questions or a collaborative project.   
+*obs: the code is not well documented, so if you wish to use BayesApp, but your model is not implemented, do not hesitate to contact Andreas Larsen for questions or a collaborative project, andreas(dot)larsen(a)bioch(dot)ox(dot)ac(dot)uk. 
 
 ## Citing the program  
 If you BayesFit in your work, please cite:                       
