@@ -1,5 +1,5 @@
 # BayesFit
-Fitting program for refining analytical models with small-angle scattering data using Bayesian refinement.  
+Program for fitting analytical models to small-angle scattering data using Bayesian refinement.  
 
 ## Citing the program  
 If you use the BayesFit software in your work, please cite:                       
@@ -12,9 +12,7 @@ Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-an
 Only tested on Linux Ubuntu        
 
 ### Installation
-Download bayesfit.f
-
-### Compiling the program
+Download bayesfit.f and compile it:
 
 >> gfortran -m64 -O2 bayesfit.f -o bayesfit
 
@@ -22,12 +20,14 @@ Download bayesfit.f
 
 >> bayesfit input_file.d    
 
-### The input file contains
+### The input file must contain
 Line 1: filename with data (headerlines are ignored)  
-Line 2: model name (describes the function for fitting data)  
+Line 2: model name (describes the function for fitting data, se below)  
 Line 3: number of steps in function integrals, max iterations in minimization routine
 Line 4: q_min, q_max (to be included in the fit. to include everything, type, e.g., 0 and 1)  
 Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 or 1 or 2 (0:fix 1:fit 2:fit with positive constraint)  
+
+example: 
 
 ### Dependencies  
 - fortran  
