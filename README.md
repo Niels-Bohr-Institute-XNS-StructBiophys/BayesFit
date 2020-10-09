@@ -16,6 +16,10 @@ Download bayesfit.f and compile it:
 
 >> gfortran -m64 -O2 bayesfit.f -o bayesfit
 
+#### Dependencies  
+- fortran  
+- gfortran (for compilation) 
+
 ### Running the program
 
 >> bayesfit input_file.d    
@@ -27,11 +31,18 @@ Line 3: number of steps in function integrals, max iterations in minimization ro
 Line 4: q_min, q_max (to be included in the fit. to include everything, type, e.g., 0 and 1)  
 Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 or 1 or 2 (0:fix 1:fit 2:fit with positive constraint)  
 
-example: 
+#### example (input for coreshell model): 
 
-### Dependencies  
-- fortran  
-- gfortran (for compilation)  
+Isim.dat   
+coreshell   
+30 500   
+0.0 1.0   
+0.808 0.08 2   
+4.95e-3 5e-4 1   
+30.3 3 2    
+49.5 5 2   
+101 10 2   
+3.96 0.4 2   
 
 ## Output
 
