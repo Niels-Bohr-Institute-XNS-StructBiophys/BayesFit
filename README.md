@@ -31,7 +31,7 @@ Line 3: number of steps in function integrals, max iterations in minimization ro
 Line 4: q_min, q_max (to be included in the fit. to include everything, type, e.g., 0 and 1)  
 Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 or 1 or 2 (0:fix 1:fit 2:fit with positive constraint)  
 
-#### example (input for coreshell model): 
+#### Example input file (for the for coreshell model): 
 
 Isim.dat   
 coreshell   
