@@ -2,7 +2,7 @@
 Program for fitting analytical models to small-angle scattering data using Bayesian refinement.  
 
 ## Citing the program  
-If you use the BayesFit software in your work, please cite:                       
+If you BayesFit in your work, please cite:                       
 
 Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.  
 
