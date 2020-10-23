@@ -70,7 +70,7 @@ computation time
 
 ##### parameters.d
 
-prior and refined parameter values, as well as Chi-square, reduced Chi-square, final alpha, number of good parameters (Ng), number of fitted datapoints (M), evidence, constraint (S), and alpha*S.     
+prior and refined parameter values, as well as Chi-square, reduced Chi-square, final alpha, number of good parameters (Ng), number of fitted datapoints (M), evidence, value of constraint (S), and value of alpha*S.     
 
 ##### prior.d 
 Intensity calculated with the prior values, which are also the initial values in the fitting algorithm  
