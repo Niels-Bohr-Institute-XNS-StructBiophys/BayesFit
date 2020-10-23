@@ -91,6 +91,19 @@ Description: Elliptical nanodiscs with a purification tag. The disc is build up 
 Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.     
 Test data: Dataset5.rad    
 Test input file: input_nano.d    
+parameters:   
+- Background [1/cm]       
+- Concentration []   
+- Volume, lipid [A^3]   
+- Volume, lipid tail [A^3]    
+- Correction of volume, protein   
+- Number of lipids per disc  
+- Thickness of protein belt [A]   
+- Roughness [1/A^2]     
+- Area per lipid headgroup [A^2]    
+- Ellipticity of lipid core     
+- Number of waters per lipid  
+- Radius of gyration of tag [A]    
 
 #### Micelle
 Name of model (for input file): micelle   
@@ -107,7 +120,6 @@ Description: Idealised spherical core-shell particle.
 Reference:   
 Test data: Isim.dat       
 Test input file: input_coreshell_good_prior.d, input_coreshell_poor_prior.d    
-
 parameters:
 - I(0) [1/cm]    
 - Constant backbround [1/cm]   
