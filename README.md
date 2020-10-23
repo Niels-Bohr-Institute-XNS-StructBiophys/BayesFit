@@ -108,6 +108,14 @@ Reference:
 Test data: Isim.dat       
 Test input file: input_coreshell_good_prior.d, input_coreshell_poor_prior.d    
 
+##### parameters
+I(0) [1/A]    
+Constant backbround [1/A]   
+Radius of core [A]    
+Radius of shell [A]   
+excess scattering length density core [arb. units]    
+excess scattering length density shell [arb. units]   
+
 #### Test model of spheres
 Name of model (for input file): test  
 Name of function (in BayesFit.f): fct_test  
