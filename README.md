@@ -93,13 +93,13 @@ Test data: Dataset5.rad
 Test input file: input_nano.d    
 parameters:   
 - Background [1/cm]       
-- Concentration []   
+- Concentration [uM]   
 - Volume, lipid [A^3]   
 - Volume, lipid tail [A^3]    
 - Correction of volume, protein   
 - Number of lipids per disc  
 - Thickness of protein belt [A]   
-- Roughness [1/A^2]     
+- Roughness [A^2]     
 - Area per lipid headgroup [A^2]    
 - Ellipticity of lipid core     
 - Number of waters per lipid  
@@ -112,6 +112,15 @@ Description: Core-shell detergent micelle, DDM micelles, concentration 30 mM.
 Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.     
 Test data: RB_DDM30mM.dat    
 Test input file: input_micelle.d    
+parameters:  
+- Concentration [mM]   
+- Background [1/cm]   
+- Aggregation number, N   
+- Contrast shell [e/A^3]*  
+- Contrast core [e/A^3 ]*
+- Roughness, sigma [A]    
+- Ellipticity, epsilon   
+e is the scattering lenght density of an electron    
 
 #### CoreShell
 Name of model (for input file): coreshell    
