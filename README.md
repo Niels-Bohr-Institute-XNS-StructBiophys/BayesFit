@@ -29,7 +29,7 @@ Download bayesfit.f and compile it:
 ### The input file must contain
 Line 1: filename with data (headerlines are ignored)  
 Line 2: model name (describes the function for fitting data, se below)  
-Line 3: number of steps in function integrals, max iterations in minimization routine
+Line 3: number of steps in function integrals, max iterations in minimization routine at each alpha (latter fixed to 100 in the last minimization step)
 Line 4: q_min, q_max (to be included in the fit. to include everything, type, e.g., 0 and 1)  
 Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 or 1 or 2 (0:fix 1:fit 2:fit with positive constraint)  
 
@@ -37,7 +37,7 @@ Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 
 
 Isim.dat   
 coreshell   
-30 500   
+30 7   
 0.0 1.0   
 0.808 0.08 2   
 4.95e-3 5e-4 1   
