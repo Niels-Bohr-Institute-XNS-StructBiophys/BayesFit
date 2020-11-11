@@ -14,9 +14,17 @@ Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-an
 Only tested on Linux Ubuntu        
 
 ### Installation
-Download bayesfit.f and compile it:
+Download bayesfit.f and compile it :
 
->> gfortran -m64 -O2 bayesfit.f -o bayesfit
+>> gfortran -m64 -O3 bayesfit.f -o bayesfit
+
+OBS, for some systems, bayesapp may be perform better with slightly different compile commands:
+
+>> gfortran -m64 -O2 bayesfit.f -o bayesfit    
+
+or 
+
+>> gfortran -march=native -O2 bayesfit.f -o bayesfit    
 
 #### Dependencies  
 - fortran  
