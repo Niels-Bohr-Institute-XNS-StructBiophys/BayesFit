@@ -20,7 +20,6 @@ cc      character*34 f2name,f2file
       character*37 f3name
       character*36 f4name
       character*41 f5name
-      character*38 f6name
       character*11 iname
       character*9 riname
       character*30 aname
@@ -64,7 +63,6 @@ cc      f4name='start_'//fname
 cc change name parameters_*.d to parameteres.d
 cc      f5name='parameters_'//fname
       f5name='parameters.d'
-      f6name='data.d'
       open(unit=15,file=f5name,status='unknown')
       write(15,*)'# paramters from BayesFit'
 cc      write(15,*)'# alpha     evidence   chi^2_r      N_g      alpha*S
@@ -143,6 +141,7 @@ cc      write(88,*)'# Parameters from fit'
         if(first.eq.0)then
           first=1
           alf=exp(xmin)
+cc change maxit to 50 for last roound of minimization
           maxit=50
           goto 2
         else
@@ -190,9 +189,9 @@ c
       write(6,31)ma,' parameters read from ',aname
       write(6,*)
       write(6,32)'Input data file  :  ',fname
-      write(6,32)'Output start I(q):  ',f4name
+      write(6,32)'Output prior I(q):  ',f4name
       write(6,32)'Output fit I(q)  :  ','fit.d'
-      write(6,32)'Output data I(q) :  ',f6name
+      write(6,32)'Output data I(q) :  ','data.d'
       write(6,32)'Output parameters:  ',f5name
    31 format(x,i2,x,a,x,a)
    32 format(x,a,x,a)
@@ -220,10 +219,6 @@ cc      open(unit=9,file=f2name,status='unknown')
       write(81,*)x(i),ymod,0
   800 continue
       close(81)
-      open(unit=82,file=f6name,status='unknown')
-      do 801 i=1,mtot
-      write(82,*)x(i),y(i),0
-  801 continue
   850 chisqo=1.e30
       chisq=1.e30
       nca=20
@@ -271,17 +266,20 @@ cc write to stdout
 
   605 chi2=0
       open(unit=21,file='fit.d',status='unknown')
+      open(unit=22,file='data.d',status='unknown')
       write(21,*)'#  fit for alpha = ',alf,' below: '
 cc  comment out unit 9, fit_*.d, f2name
 cc      write(9,*)'#  fit for alpha = ',alf,' below: '
       do 1000 i=1,mtot
       call funcs2(x(i),fit,ymod,dyda,ma)
       write(21,*)x(i),ymod,0
+      write(22,*)x(i),y(i),sd(i)
 cc      write(9,*)x(i),ymod,0
       ymod2=exp(-(x(i)*fit(8))**2/2)+fit(2)
       chi2=chi2+(ymod-y(i))**2/sd(i)**2
  1000 continue
       close(21)
+      close(22)
       do 1100 k=1,ma
  1100 continue
       sumchi=sumchi+chisq/mtot
