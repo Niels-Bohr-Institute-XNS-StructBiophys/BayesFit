@@ -20,6 +20,7 @@ cc      character*34 f2name,f2file
       character*37 f3name
       character*36 f4name
       character*41 f5name
+      character*38 f6name
       character*11 iname
       character*9 riname
       character*30 aname
@@ -63,6 +64,7 @@ cc      f4name='start_'//fname
 cc change name parameters_*.d to parameteres.d
 cc      f5name='parameters_'//fname
       f5name='parameters.d'
+      f6name='data.d'
       open(unit=15,file=f5name,status='unknown')
       write(15,*)'# paramters from BayesFit'
 cc      write(15,*)'# alpha     evidence   chi^2_r      N_g      alpha*S
@@ -190,6 +192,7 @@ c
       write(6,32)'Input data file  :  ',fname
       write(6,32)'Output start I(q):  ',f4name
       write(6,32)'Output fit I(q)  :  ','fit.d'
+      write(6,32)'Output data I(q) :  ',f6name
       write(6,32)'Output parameters:  ',f5name
    31 format(x,i2,x,a,x,a)
    32 format(x,a,x,a)
@@ -217,7 +220,10 @@ cc      open(unit=9,file=f2name,status='unknown')
       write(81,*)x(i),ymod,0
   800 continue
       close(81)
-
+      open(unit=82,file=f6name,status='unknown')
+      do 801 i=1,mtot
+      write(82,*)x(i),y(i),0
+  801 continue
   850 chisqo=1.e30
       chisq=1.e30
       nca=20
