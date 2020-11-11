@@ -73,10 +73,13 @@ computation time
 prior and refined parameter values, as well as Chi-square, reduced Chi-square, final alpha, number of good parameters (Ng), number of fitted datapoints (M), evidence, value of constraint (S), and value of alpha*S.     
 
 ##### prior.d 
-Intensity calculated with the prior values, which are also the initial values in the fitting algorithm  
+Intensity calculated with the prior values, which are also the initial values in the fitting algorithm.  
 
 ##### fit.d
 Most probable fit after model refinement for all alpha-values.    
+
+#### data.d     
+Data used in the fitting process (no headerlines
 
 ## Models 
 Four models have been implemented so far in BayesFit.   
