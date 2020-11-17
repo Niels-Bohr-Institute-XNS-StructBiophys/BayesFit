@@ -14,9 +14,17 @@ Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-an
 Only tested on Linux Ubuntu        
 
 ### Installation
-Download bayesfit.f and compile it:
+Download bayesfit.f and compile it :
 
->> gfortran -m64 -O2 bayesfit.f -o bayesfit
+>> gfortran -m64 -O3 bayesfit.f -o bayesfit
+
+OBS, for some systems, bayesapp may be perform better with slightly different compile commands:
+
+>> gfortran -m64 -O2 bayesfit.f -o bayesfit    
+
+or 
+
+>> gfortran -march=native -O2 bayesfit.f -o bayesfit    
 
 #### Dependencies  
 - fortran  
@@ -29,7 +37,7 @@ Download bayesfit.f and compile it:
 ### The input file must contain
 Line 1: filename with data (headerlines are ignored)  
 Line 2: model name (describes the function for fitting data, se below)  
-Line 3: number of steps in function integrals, max iterations in minimization routine
+Line 3: number of steps in function integrals, max iterations in minimization routine at each alpha (latter fixed to 100 in the last minimization step)
 Line 4: q_min, q_max (to be included in the fit. to include everything, type, e.g., 0 and 1)  
 Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 or 1 or 2 (0:fix 1:fit 2:fit with positive constraint)  
 
@@ -37,7 +45,7 @@ Line 5 and following lines: parameter 1 prior value, parameter 1 prior width, 0 
 
 Isim.dat   
 coreshell   
-30 500   
+30 7   
 0.0 1.0   
 0.808 0.08 2   
 4.95e-3 5e-4 1   
@@ -70,13 +78,16 @@ computation time
 
 ##### parameters.d
 
-prior and refined parameter values, as well as Chi-square, reduced Chi-square, final alpha, number of good parameters (Ng), number of fitted datapoints (M), evidence, constraint (S), and alpha*S.     
+prior and refined parameter values, as well as Chi-square, reduced Chi-square, final alpha, number of good parameters (Ng), number of fitted datapoints (M), evidence, value of constraint (S), and value of alpha*S.     
 
 ##### prior.d 
-Intensity calculated with the prior values, which are also the initial values in the fitting algorithm  
+Intensity calculated with the prior values, which are also the initial values in the fitting algorithm.  
 
 ##### fit.d
 Most probable fit after model refinement for all alpha-values.    
+
+#### data.d     
+Data used in the fitting process (no headerlines
 
 ## Models 
 Four models have been implemented so far in BayesFit.   
@@ -91,6 +102,19 @@ Description: Elliptical nanodiscs with a purification tag. The disc is build up 
 Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.     
 Test data: Dataset5.rad    
 Test input file: input_nano.d    
+parameters:   
+- Background [1/cm]       
+- Concentration [uM]   
+- Volume, lipid [A^3]   
+- Volume, lipid tail [A^3]    
+- Correction of volume, protein   
+- Number of lipids per disc  
+- Thickness of protein belt [A]   
+- Roughness [A^2]     
+- Area per lipid headgroup [A^2]    
+- Ellipticity of lipid core     
+- Number of waters per lipid  
+- Radius of gyration of tag [A]    
 
 #### Micelle
 Name of model (for input file): micelle   
@@ -99,6 +123,15 @@ Description: Core-shell detergent micelle, DDM micelles, concentration 30 mM.
 Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.     
 Test data: RB_DDM30mM.dat    
 Test input file: input_micelle.d    
+parameters:  
+- Concentration [mM]   
+- Background [1/cm]   
+- Aggregation number, N   
+- Contrast shell [e/A^3]*  
+- Contrast core [e/A^3 ]*
+- Roughness, sigma [A]    
+- Ellipticity, epsilon   
+e is the scattering lenght density of an electron    
 
 #### CoreShell
 Name of model (for input file): coreshell    
@@ -107,6 +140,13 @@ Description: Idealised spherical core-shell particle.
 Reference:   
 Test data: Isim.dat       
 Test input file: input_coreshell_good_prior.d, input_coreshell_poor_prior.d    
+parameters:
+- I(0) [1/cm]    
+- Constant backbround [1/cm]   
+- Radius of core [A]    
+- Radius of shell [A]   
+- Excess scattering length density (contrast) core [arb. units]    
+- Excess scattering length density (contrast) shell [arb. units]   
 
 #### Test model of spheres
 Name of model (for input file): test  
