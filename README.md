@@ -6,7 +6,7 @@ a web application is available via GenApp (alpha version): http://bayesfit.genap
 *obs: the fortran code is not well documented, so if you wish to use BayesApp, but your model is not implemented, do not hesitate to contact Andreas Larsen for questions or a collaborative project, andreas(dot)larsen(a)bioch(dot)ox(dot)ac(dot)uk. 
 
 ## Citing the program  
-If you BayesFit in your work, please cite:                       
+If you use BayesFit in your work, please cite:                       
 
 Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.  
 
