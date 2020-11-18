@@ -16,7 +16,7 @@ model = ['Nanodisc','MicelleDDM','CoreShellGoodPrior','CoreShellPoorPrior']
 inputfile = ['nano','micelle','coreshell_good_prior','coreshell_poor_prior']
 
 os.system('rm bayesfit')
-os.system('gfortran -m64 -O2 bayesfit.f -o bayesfit')
+os.system('gfortran -m64 -O3 bayesfit.f -o bayesfit')
 os.system('./bayesfit input_%s.d' % inputfile[i])
 
 q,I,dI = np.genfromtxt(filename[i],skip_header=headerlines[i],usecols=[0,1,2],unpack=True)
