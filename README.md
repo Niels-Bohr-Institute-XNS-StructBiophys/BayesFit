@@ -1,7 +1,9 @@
 # BayesFit
-Program for fitting analytical models to small-angle scattering data using Bayesian refinement.  
+Program for fitting analytical models to small-angle scattering data using Bayesian refinement.   
 
-*obs: the code is not well documented, so if you wish to use BayesApp, but your model is not implemented, do not hesitate to contact Andreas Larsen for questions or a collaborative project, andreas(dot)larsen(a)bioch(dot)ox(dot)ac(dot)uk. 
+a web application is available via GenApp (alpha version): http://bayesfit.genapp.rocks/bayesfit/     
+
+*obs: the fortran code is not well documented, so if you wish to use BayesApp, but your model is not implemented, do not hesitate to contact Andreas Larsen for questions or a collaborative project, andreas(dot)larsen(a)bioch(dot)ox(dot)ac(dot)uk. 
 
 ## Citing the program  
 If you BayesFit in your work, please cite:                       
@@ -89,7 +91,7 @@ Most probable fit after model refinement for all alpha-values.
 #### data.d     
 Data used in the fitting process (no headerlines
 
-## Models 
+## Models and Example data
 Four models have been implemented so far in BayesFit.   
 The models can be run with the python3 script run_examples.py. Edit the line "i = 0" to select what example model to run, and run the script: 
 
@@ -100,8 +102,8 @@ Name of model (for input file): nanodisc
 Name of function (in BayesFit.f): fct_nano  
 Description: Elliptical nanodiscs with a purification tag. The disc is build up of cylinder form factors and the tag is modelled as a random coil.  
 Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.     
-Test data: Dataset5.rad    
-Test input file: input_nano.d    
+Example data: Dataset5.rad    
+Example input file: input_nano.d    
 parameters:   
 - Background [1/cm]       
 - Concentration [uM]   
@@ -121,8 +123,8 @@ Name of model (for input file): micelle
 Name of function (in BayesFit.f): fct_mic   
 Description: Core-shell detergent micelle, DDM micelles, concentration 30 mM.    
 Reference: Andreas Haahr Larsen, Lise Arleth, and Steen Hansen (2018). Analysis of small-angle scattering data using model fitting and Bayesian regularization. J Appl Cryst, 51, 1151-1161.     
-Test data: RB_DDM30mM.dat    
-Test input file: input_micelle.d    
+Example data: RB_DDM30mM.dat    
+Example input file: input_micelle.d    
 parameters:  
 - Concentration [mM]   
 - Background [1/cm]   
@@ -138,8 +140,8 @@ Name of model (for input file): coreshell
 Name of cunction (in BayesFit.f): fct_coreshell    
 Description: Idealised spherical core-shell particle.      
 Reference:   
-Test data: Isim.dat       
-Test input file: input_coreshell_good_prior.d, input_coreshell_poor_prior.d    
+Example data: Isim.dat       
+Example input file: input_coreshell_good_prior.d, input_coreshell_poor_prior.d    
 parameters:
 - I(0) [1/cm]    
 - Constant backbround [1/cm]   
@@ -174,4 +176,5 @@ CoNeXT, the Carlsberg Foundation, and University of Copenhagen for co-funding th
 ## Suggestions for future development  
 - include resolution effects.  
 - option for inclusion of several datasets.  
-- restructure, so models are independent modules.  
+- restructure, so models are independent modules.   
+- expand with more models.    
