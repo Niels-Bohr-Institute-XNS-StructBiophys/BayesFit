@@ -1,6 +1,6 @@
 # This repository is no longer maintained!
 
-this repository is no longer maintained. A new implementation of BayesFit is available at:    
+this repository is no longer maintained. A new implementation of BayesFit (in python) is available at: 
 
 https://github.com/andreashlarsen/BayesFit/
 
