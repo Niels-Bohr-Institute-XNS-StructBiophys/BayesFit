@@ -1,3 +1,12 @@
+# This repository is no longer maintained!
+
+this repository is no longer maintained. A new implementation of BayesFit is available at:    
+
+https://github.com/andreashlarsen/BayesFit/
+
+the text below and files etc are archived for reference
+
+
 # BayesFit
 Program for fitting analytical models to small-angle scattering data using Bayesian refinement.   
 
